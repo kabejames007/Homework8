@@ -13,13 +13,12 @@ public class StringTester {
     public static void main(String[] args) {
 
         String geneRandom;
-
         while (!isFull()) {
             geneRandom = createRandomAlphaNumericString(5);
             if (checkHasNumbers(geneRandom)) {
                 System.out.println(geneRandom + " Has numbers in");
             }
-            if (!isTheValidString(geneRandom)) {
+            if (isTheValidString(geneRandom)) {
                 addStringToArray(geneRandom);
             }
         }
@@ -70,13 +69,12 @@ public class StringTester {
     }
 
     public static boolean isTheValidString(String done) {
-
         String vowels = "AEIOU";
         boolean validChars = vowels.indexOf(Character.toUpperCase(done.charAt(0))) != -1 && Character.isUpperCase(done.charAt(0));
         if (!checkHasNumbers(done) && validChars) {
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
     }
 }
