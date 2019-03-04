@@ -3,12 +3,10 @@ package edu.dmacc.codedsm.hw8;
 import java.util.Random;
 import java.util.Arrays;
 
-
 public class StringTester {
 
     public static String[] phrase = new String[5];
     public static int n = 0;
-
 
     public static void main(String[] args) {
 
