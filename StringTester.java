@@ -13,7 +13,7 @@ public class StringTester {
     public static void main(String[] args) {
 
         String geneRandom;
-        while (!isFull()) {
+        while (!isArrayFull()) {
             geneRandom = createRandomAlphaNumericString(5);
             if (checkHasNumbers(geneRandom)) {
                 System.out.println(geneRandom + " Has numbers in");
@@ -24,6 +24,24 @@ public class StringTester {
         }
 
         System.out.println("Valid Array String => " + Arrays.toString(phrase));
+    }
+
+    public static void addStringToArray(String validString) {
+        phrase[n++] = validString;
+    }
+
+    public static boolean isTheValidString(String alphaNumericString) {
+        String vowels = "AEIOU";
+        boolean validChars = vowels.indexOf(Character.toUpperCase(alphaNumericString.charAt(0))) != -1 && Character.isUpperCase(alphaNumericString.charAt(0));
+        if (!checkHasNumbers(alphaNumericString) && validChars) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean isArrayFull() {
+        return n == phrase.length;
     }
 
     public static boolean checkHasNumbers(String hasNumbers) {
@@ -58,23 +76,5 @@ public class StringTester {
             }
         }
         return buffer.toString();
-    }
-
-    public static boolean isFull() {
-        return n == phrase.length;
-    }
-
-    public static void addStringToArray(String item) {
-        phrase[n++] = item;
-    }
-
-    public static boolean isTheValidString(String done) {
-        String vowels = "AEIOU";
-        boolean validChars = vowels.indexOf(Character.toUpperCase(done.charAt(0))) != -1 && Character.isUpperCase(done.charAt(0));
-        if (!checkHasNumbers(done) && validChars) {
-            return true;
-        } else {
-            return false;
-        }
     }
 }
